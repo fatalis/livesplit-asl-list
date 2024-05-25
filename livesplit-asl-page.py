@@ -16,7 +16,7 @@ import requests
 from jinja2 import Template
 
 DIR = os.path.dirname(os.path.abspath(__file__))
-FILE = os.path.join(DIR, 'www', 'index.html')
+FILE = os.path.join(DIR, 'docs', 'index.html')
 XML_URL = 'https://raw.githubusercontent.com/LiveSplit/LiveSplit.AutoSplitters/master/LiveSplit.AutoSplitters.xml'
 
 LOC_SMALL = 15
