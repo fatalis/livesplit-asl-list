@@ -1,1 +1,1 @@
-[![Daily update](https://github.com/fatalis/livesplit-asl-list/actions/workflows/update.yml/badge.svg)](https://github.com/fatalis/livesplit-asl-list/actions/workflows/update.yml)
+[![Daily Update](https://github.com/fatalis/livesplit-asl-list/actions/workflows/update.yml/badge.svg)](https://github.com/fatalis/livesplit-asl-list/actions/workflows/update.yml)
