@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" /> 
+<title>ASL List -WIP-</title>
+<link rel="stylesheet" href="css/filtrify.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<style>
+    ul.ft-menu > li.ft-field > div.ft-panel { margin-left: 0; }
+    ul.ft-menu > li.ft-field > div.ft-panel:before { left: 0; margin-left: 0; }
+    ul.ft-menu > li.ft-field > div.ft-panel:after { left: 2px; margin-left: 0; }
+    ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags { max-height: 400px !important }
+    ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected { padding: 2px; }
+    .number { text-align: right; }
+    .ft-search { display: none; }
+    th { cursor: pointer; }
+    .footer { font-size: x-small; text-align: right; display: block; }
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+</style>
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/filtrify.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $.filtrify("asls", "tags");
+        $("#asltable").tablesorter();
+    });
+</script>
+</head>
+<body>
+<div class="container">
+    <div id="tags"></div>
+    <table id="asltable" class="table table-striped table-bordered table-hover">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Game</th>
+                <th>Author</th>
+                <th>Complexity</th>
+                <th>Lines</th>
+            </tr>
+        </thead>
+        <tbody id="asls">
+            {% for asl in asls %}
+            <tr data-features="{{ asl.features|join(', ') }}" data-behaviour="{{ asl.behaviours|join(', ') }}">
+                <td><a href="{{ asl.url }}">{{ asl.game }}</a></td>
+                <td>{{ asl.author }}</td>
+                <td class="number">{{ asl.complexity }}</td>
+                <td class="number">{{ asl.loc }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
